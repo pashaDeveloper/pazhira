@@ -300,7 +300,10 @@ const en: { [key: string]: string } = {
   enterAddress: "Enter your address",
   enterExpectedRepairTime: "Enter expected repair time",
   contactInfo: "Contact Information",
-  contactForIssues: "Contact for issues or guidance"
+  contactForIssues: "Contact for issues or guidance",
+  pageNotFound: "Page Not Found",
+  pageNotFoundDescription: "The page you are looking for could not be found. Return to Pazhira mobile store.",
+  backToHome: "Back to Home"
 };
 
 export default en;

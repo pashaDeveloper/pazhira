@@ -297,7 +297,10 @@ const fa: { [key: string]: string } = {
   enterAddress: "آدرس خود را وارد کنید",
   enterExpectedRepairTime: "زمان مورد انتظار برای تعمیر را وارد کنید",
   contactInfo: "اطلاعات تماس",
-  contactForIssues: "در صورت بروز مشکل یا نیاز به راهنمایی تماس بگیرین"
+  contactForIssues: "در صورت بروز مشکل یا نیاز به راهنمایی تماس بگیرید",
+  pageNotFound: "صفحه پیدا نشد",
+  pageNotFoundDescription: "صفحه مورد نظر پیدا نشد. به فروشگاه موبایل پاژیرا بازگردید.",
+  backToHome: "بازگشت به صفحه اصلی"
 };
 
 export default fa;
