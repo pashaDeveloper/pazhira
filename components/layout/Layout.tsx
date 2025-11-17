@@ -48,14 +48,14 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
         <div dir="rtl" className="flex flex-col min-h-[100vh]">
           <NextNProgress height={7} />
           <Header />
-          <main className="flex-grow mt-52">{children}</main>
+          <main className="flex-grow md:mt-52">{children}</main>
           <Footer />
         </div>
         <ToastContainer
           autoClose={2000}
           hideProgressBar={true}
-          rtl={locale === "en" ? false : true}
-          position={locale === "en" ? "top-right" : "top-left"}
+          rtl={true}
+          position={"top-left"}
         />
       </ThemeProvider>
     </Provider>
