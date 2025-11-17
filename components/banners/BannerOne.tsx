@@ -68,13 +68,13 @@ export default function BannerOne() {
 
 
             {/* اسلایدر — محتوای اصلی */}
-            <div className="banner-slider h-1/3  relative z-20">
+            <div className="banner-slider h-1/3   relative z-20">
               <Slider {...settings}>
 
                 {/* اسلاید 1: آیفون 17 پرو مکس */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl p-4 text-center lg:text-left">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         آیفون 17 پرو مکس
                       </h2>
@@ -104,7 +104,7 @@ export default function BannerOne() {
                 {/* اسلاید 2: ایرپاد پرو 3 */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4 p">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         ایرپاد پرو 3
                       </h2>
@@ -134,7 +134,7 @@ export default function BannerOne() {
                 {/* اسلاید 3: اپل ویژن پرو */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         اپل ویژن پرو
                       </h2>
@@ -164,7 +164,7 @@ export default function BannerOne() {
                 {/* اسلاید 4: آیپد پرو */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         آیپد پرو
                       </h2>
@@ -194,7 +194,7 @@ export default function BannerOne() {
                 {/* اسلاید 5: پلی‌استیشن 5 */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         پلی‌استیشن 5
                       </h2>
@@ -224,7 +224,7 @@ export default function BannerOne() {
                 {/* اسلاید 6: مک‌بوک پرو 16 اینچ */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         مک‌بوک پرو 16 اینچ
                       </h2>
@@ -254,7 +254,7 @@ export default function BannerOne() {
                 {/* اسلاید 7: مجیک موس */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         مجیک موس
                       </h2>
@@ -284,7 +284,7 @@ export default function BannerOne() {
                 {/* اسلاید 8: هدفون بیتس */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         هدفون بیتس
                       </h2>
@@ -314,7 +314,7 @@ export default function BannerOne() {
                 {/* اسلاید 9: اسپیکر JBL */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl text-center lg:text-left">
+                    <div className="max-w-xl text-center lg:text-left p-4">
                       <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         اسپیکر JBL
                       </h2>

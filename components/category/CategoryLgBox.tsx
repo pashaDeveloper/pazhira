@@ -13,14 +13,16 @@ interface Props {
     paddingInline: string;
     paddingBlock: string;
     textAlign?: string;
-    gridRow: string;
-    gridColumn: string;
+    gridRow?: string;
+    gridColumn?: string;
   };
   href: string;
   imgSrc: string;
   imgWidth: number;
   imgHeight: number;
+  gridClass?: string;
 }
+
 const CategoryLgBox: React.FC<Props> = ({
   name,
   title,
@@ -30,13 +32,14 @@ const CategoryLgBox: React.FC<Props> = ({
   imgSrc,
   imgWidth,
   imgHeight,
+  gridClass,
 }) => {
   const { t } = useLanguage();
 
   return (
     <div
       key={title}
-      className={`flex justify-around items-center rounded-md shadow-lg overflow-hidden`}
+      className={`flex justify-around items-center rounded-md shadow-lg overflow-hidden ${gridClass || ''}`}
       style={styles as React.CSSProperties}
     >
       <div className="mx-[0.5rem]">
