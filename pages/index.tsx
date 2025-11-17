@@ -22,6 +22,7 @@ import { IProduct } from "../lib/types/products";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
 import BannerOne from "../components/banners/BannerOne";
 import FeatureOne from "../components/features";
+import { NextSeo } from 'next-seo';
 
 const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   const dispatch = useDispatch();
@@ -38,19 +39,24 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
 
   return (
     <>
-<Head>
-  <title>فروشگاه لوازم دیجیتال | پاژیرا</title>
-
-  <meta
-    name="description"
-    content="فروشگاه لوازم دیجیتال پاژیرا؛ خرید موبایل، آیفون، لپ‌تاپ و گجت‌های دیجیتال در ارومیه با بهترین قیمت و ضمانت."
-  />
-
-  <meta
-    name="keywords"
-    content="فروشگاه لوازم دیجیتال ارومیه, پاژیرا, خرید موبایل ارومیه, خرید آیفون ارومیه, فروشگاه دیجیتال ارومیه"
-  />
-</Head>
+  <NextSeo
+        title="فروشگاه لوازم دیجیتال | پاژیرا"
+        description="فروشگاه لوازم دیجیتال پاژیرا؛ خرید موبایل، آیفون، لپ‌تاپ و گجت‌های دیجیتال در ارومیه با بهترین قیمت و ضمانت."
+        canonical="https://pazhira.com/"
+        openGraph={{
+          url: 'https://pazhira.com/',
+          title: 'فروشگاه لوازم دیجیتال | پاژیرا',
+          description: 'فروشگاه لوازم دیجیتال پاژیرا؛ خرید موبایل، آیفون، لپ‌تاپ و گجت‌های دیجیتال در ارومیه با بهترین قیمت و ضمانت.',
+          images: [
+            {
+              url: 'https://pazhira.com/images/og-image.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Pazhira Mobile Store',
+            },
+          ],
+        }}
+      />
 
 
       <div>
