@@ -39,32 +39,19 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   return (
     <>
 <Head>
-<title>فروشگاه لوازم دیجیتال  | پاژیرا</title>
+  <title>فروشگاه لوازم دیجیتال | پاژیرا</title>
 
   <meta
     name="description"
-    content="فروشگاه موبایل پاژیرا یکی از بزرگ‌ترین فروشگاه‌های اینترنتی موبایل در ارومیه؛ خرید آیفون، سامسونگ و گوشی‌های روز با قیمت مناسب. اگر می‌پرسید آیفون را در ارومیه از کجا بخریم؟ پاژیرا انتخاب مطمئن شماست."
+    content="فروشگاه لوازم دیجیتال پاژیرا؛ خرید موبایل، آیفون، لپ‌تاپ و گجت‌های دیجیتال در ارومیه با بهترین قیمت و ضمانت."
   />
 
   <meta
     name="keywords"
-    content="پاژیرا, فروشگاه موبایل ارومیه, خرید موبایل ارومیه, خرید آیفون ارومیه, آیفون از کجا بخریم ارومیه, بزرگ‌ترین فروشگاه موبایل ارومیه, موبایل جلالی ارومیه, موبایل امید ارومیه, خرید سامسونگ ارومیه, فروش موبایل اورمیه"
+    content="فروشگاه لوازم دیجیتال ارومیه, پاژیرا, خرید موبایل ارومیه, خرید آیفون ارومیه, فروشگاه دیجیتال ارومیه"
   />
-
-  {/* OG TAGS */}
-  <meta property="og:title" content="فروشگاه موبایل پاژیرا | خرید موبایل از ارومیه" />
-  <meta
-    property="og:description"
-    content="خرید آیفون، سامسونگ و گوشی‌های روز از بزرگ‌ترین فروشگاه موبایل ارومیه. ضمانت، قیمت مناسب و ارسال سریع در پاژیرا."
-  />
-  <meta property="og:image" content="https://pazhira.com/og-image.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pazhira.com" />
-
-  {/* TWITTER TAGS */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://pazhira.com/og-image.jpg" />
 </Head>
+
 
       <div>
         <Story />

@@ -1,9 +1,37 @@
 'use client';
 import Slider from 'react-slick';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from '../shared/container';
 
 const FeatureOne = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSliderLoaded, setIsSliderLoaded] = useState(false);
+
+  // Check if react-slick is loaded
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Set a small delay to ensure DOM is ready
+      const timer = setTimeout(() => {
+        setIsSliderLoaded(true);
+      }, 50);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Skeleton loader component
+  const SkeletonItem = () => (
+    <div className="mt-4 p-2">
+      <div className="bg-white rounded-full w-28 h-28 mx-auto flex items-center justify-center shadow-lg animate-pulse">
+        <div className="bg-gray-200 border-2 border-dashed rounded-full w-20 h-20" />
+      </div>
+      <div className="mt-4 text-center">
+        <div className="h-4 bg-gray-200 rounded-full w-3/4 mx-auto mb-2 animate-pulse"></div>
+        <div className="h-3 bg-gray-200 rounded w-1/2 mx-auto animate-pulse"></div>
+      </div>
+    </div>
+  );
+
   // فلش بعدی با آیکون
   function SampleNextArrow({ onClick }: { onClick?: () => void }) {
     return (
@@ -117,32 +145,47 @@ const FeatureOne = () => {
   ];
 
   return (
-    <Container >
-
+    <Container>
       <div className=" bg-gradient-to-r from-orange-100 to-amber-100 mx-2 rounded-2xl mt-4">
         <div className="container ">
           <div className="relative ">
-            <Slider {...settings}>
-              {features.map((item, index) => (
-                <div key={index} className="">
-                  <div className="group cursor-pointer mt-4">
-                    <div className="bg-white rounded-full w-28 h-28 mx-auto flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-orange-100 group-hover:shadow-xl overflow-hidden border-4 border-orange-200 group-hover:border-orange-300">
-                      <div className="transform transition-transform duration-300 group-hover:scale-110 p-2">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-20 h-20 object-contain drop-shadow-md group-hover:drop-shadow-lg"
-                        />
+            {!isSliderLoaded ? (
+              // Skeleton loader while slider is loading
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <SkeletonItem key={index} />
+                ))}
+              </div>
+            ) : (
+              // Actual slider when loaded
+              <Slider {...settings}>
+                {features.map((item, index) => (
+                  <div key={index} className="">
+                    <div className="group cursor-pointer mt-4">
+                      <div className="bg-white rounded-full w-28 h-28 mx-auto flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-orange-100 group-hover:shadow-xl overflow-hidden border-4 border-orange-200 group-hover:border-orange-300">
+                        <div className="transform transition-transform duration-300 group-hover:scale-110 p-2">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-20 h-20 object-contain drop-shadow-md group-hover:drop-shadow-lg"
+                            onLoad={() => {
+                              // Only set isLoading to false when the last image loads
+                              if (index === features.length - 1) {
+                                setIsLoading(false);
+                              }
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-4 text-center">
+                        <h6 className="text-md md:text-lg text-gray-800 group-hover:text-orange-600 transition-colors duration-300">{item.title}</h6>
+                        <span className="text-sm text-gray-500">{item.products}+ محصول</span>
                       </div>
                     </div>
-                    <div className="mt-4 text-center">
-                      <h6 className="text-md md:text-lg text-gray-800 group-hover:text-orange-600 transition-colors duration-300">{item.title}</h6>
-                      <span className="text-sm text-gray-500">{item.products}+ محصول</span>
-                    </div>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </Slider>
+            )}
           </div>
         </div>
       </div>
