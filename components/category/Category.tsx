@@ -4,10 +4,11 @@ import CategorySmBox from "./CategorySmBox";
 import { categoryLgContent } from "../../mock/category-lg";
 import CategoryLgBox from "./CategoryLgBox";
 import SectionTitle from "../UI/SectionTitle";
+import Container from "../shared/container";
 
 const Category = () => {
   return (
-    <div className="flex flex-col items-center my-4 md:my-8">
+    <Container className="flex flex-col items-center my-4 md:my-8">
       <SectionTitle title={"CategoryOfGoods"} />
 
       {/* 📱 sm and md break point */}
@@ -54,7 +55,7 @@ const Category = () => {
           }
         )}
       </div>
-    </div>
+    </Container>
   );
 };
 

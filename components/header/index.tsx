@@ -18,7 +18,7 @@ const index = () => {
   return (
     <header className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
       <div className="flex flex-col md:px-4 mb-2">
-        <div className="flex items-center justify-between md:order-2 md:mt-2  relative">
+        <div className="flex items-center justify-between  px-2 md:px-0 md:order-2 md:mt-2  relative">
           <Menu />
           <div className="md:hidden">
             <Logo />
@@ -28,7 +28,7 @@ const index = () => {
           </div>
         </div>
         <hr className="md:hidden" />
-        <div className="mb-2 mt-4 md:mt-0 flex  items-center md:order-1">
+        <div className="mb-2 mt-4 md:mt-0 flex  items-center md:order-1 px-2 md:px-0">
           <div className="hidden md:block">
             <Logo />
           </div>

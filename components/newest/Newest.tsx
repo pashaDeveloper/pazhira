@@ -6,6 +6,7 @@ import Link from "next/link";
 import Card from "../UI/card/Card";
 import { IProduct } from "../../lib/types/products";
 import SectionTitle from "../UI/SectionTitle";
+import Container from "../shared/container";
 
 const Newest = () => {
   const { t } = useLanguage();
@@ -17,7 +18,7 @@ const Newest = () => {
   );
 
   return (
-    <div className="mx-auto my-4 md:my-8 flex flex-col xl:max-w-[2130px]">
+    <Container className="mx-auto my-4 md:my-8 flex flex-col xl:max-w-[2130px]">
       <SectionTitle title={"newest"} />
 
       <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 ">
@@ -37,7 +38,7 @@ const Newest = () => {
           </a>
         </Link>
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -38,7 +38,7 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   return (
     <div>
       <Story />
-      <BannerOne  />
+      <BannerOne />
       <FeatureOne />
       <Offers />
       <Category />

@@ -22,7 +22,7 @@ const CarouselBox: React.FC<Props> = ({
   const { t } = useLanguage();
 
   const settings = {
-    className: `relative px-4 py-4 rounded-md ${full ? "bg-palette-fill" : "bg-[#FF5904] rounded-r-md backdrop-blur-md overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[url('/assets/images/bg/snow-2.png')] after:bg-cover after:bg-center after:bg-no-repeat   after:-z-10"}`,
+    className: `relative px-4 py-4 h-full rounded-md ${full ? "bg-palette-fill" : "bg-[#FF5904] rounded-r-md backdrop-blur-md overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[url('/assets/images/bg/snow-2.png')] after:bg-cover after:bg-center after:bg-no-repeat   after:-z-10"}`,
     infinite: true,
     speed: 600,
     centerPadding: "60px",
@@ -77,9 +77,9 @@ const CarouselBox: React.FC<Props> = ({
       >
         {!full ? (
           <Link href={`/offers/`}>
-            <a className="lg:w-auto w-full lg:h-full flex items-between lg:items-center justify-center flex-row lg:flex-col gap-3 px-5 lg:px-0 pt-5 pb-3 lg:!py-0  !mx-5">
-              <div className="flex flex-row justify-center items-center lg:flex-col gap-2 lg:gap-3">
-                  <p className="text-white text-center text-[18px] font-semibold">به مناسبت آغاز زمستان</p>
+            <a className="lg:w-auto w-full lg:h-full flex items-between lg:items-center justify-center  flex-col gap-3 px-5 lg:px-0 pt-5 pb-3 lg:!py-0  !mx-5">
+              <div className="flex  justify-center items-center flex-col gap-2 lg:gap-3">
+                  <p className="text-white text-center text-[18px]">به مناسبت آغاز زمستان</p>
                 <div className="order-2 lg:order-1" style={{ width: '88px', height: '88px', lineHeight: 0 }}>
    
                   <img

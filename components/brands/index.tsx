@@ -3,6 +3,7 @@ import BrandBox from "./BrandBox";
 import { brandContent } from "../../mock/brand";
 import Slider from "react-slick";
 import SectionTitle from "../UI/SectionTitle";
+import Container from "../shared/container";
 
 const Brands = () => {
   const settings = {
@@ -40,7 +41,7 @@ const Brands = () => {
   };
 
   return (
-    <div className="p-1 my-4 md:my-8 text-center overflow-x-hidden">
+    <Container className="p-1 my-4 md:my-8 text-center overflow-x-hidden">
       <SectionTitle title={"popularBrands"} />
       <div className="overflow-x-hidden">
         <Slider {...settings}>
@@ -55,7 +56,7 @@ const Brands = () => {
           })}
         </Slider>
       </div>
-    </div>
+    </Container>
   );
 };
 

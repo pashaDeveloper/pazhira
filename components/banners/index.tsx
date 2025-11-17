@@ -2,10 +2,11 @@ import React from "react";
 import BannerBox from "./banner-box/BannerBox";
 import { bannerContent } from "../../mock/banner";
 import SectionTitle from "../UI/SectionTitle";
+import Container from "../shared/container";
 
 const Banner = () => {
   return (
-    <div className="flex items-center flex-col w-full xl:max-w-[2100px] my-4 md:my-8 mx-auto">
+    <Container className="flex items-center flex-col w-full xl:max-w-[2100px] my-4 md:my-8 mx-auto">
       <SectionTitle title={"specialSale"} />
       <div className="grid gap-4 grid-cols-6 lg:grid-cols-12">
         {bannerContent.map(
@@ -35,7 +36,7 @@ const Banner = () => {
           }
         )}
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -8,7 +8,7 @@ const Story = () => {
 
   return (
     <div className="container">
-      <div className="flex overflow-x-auto  gap-x-4 justify-center  pt-2 pr-8 -mx-4 scrollbar-hide">
+      <div className="flex overflow-x-auto  gap-x-4 md:justify-center justify-start pt-2 pr-8 -mx-4 scrollbar-hide">
         {stories.map((_, index) => (
           <div 
             key={index} 
