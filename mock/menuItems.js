@@ -10,6 +10,7 @@ import { FiMonitor, FiHeadphones } from "react-icons/fi";
 
 import { GiLargeDress } from "react-icons/gi";
 import { FaBaby, FaRedhat } from "react-icons/fa";
+import { FiSearch, FiTool, FiDollarSign } from "react-icons/fi";
 
 const menuItems = [
   {
@@ -102,4 +103,7 @@ export default menuItems;
 export const extraMenu = [
   { title: "offer", icon: AiOutlinePercentage, href: "/offers" },
   { title: "bestSells", icon: RiFireLine, href: "/" },
+  { title: "trackOrder", icon: FiSearch, href: "/track-order" },
+  { title: "repair", icon: FiTool, href: "/repair" },
+  { title: "priceCheck", icon: FiDollarSign, href: "/price-check" },
 ];

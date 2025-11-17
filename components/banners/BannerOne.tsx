@@ -1,7 +1,7 @@
 // app/components/BannerOne.tsx
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -10,8 +10,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import Container from '../shared/container';
 
 export default function BannerOne() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const settings = {
-    dots: false,
+    dots: false, // We'll implement our own dots
     arrows: true,
     infinite: true,
     speed: 800,
@@ -22,20 +24,24 @@ export default function BannerOne() {
     centerMode: false,
     centerPadding: '0px',
     cssEase: 'ease-in-out',
+    beforeChange: (oldIndex: number, newIndex: number) => {
+      setCurrentSlide(newIndex);
+    },
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
+          arrows: true, // Keep arrows enabled on mobile for consistency
         },
       },
     ],
   };
 
+  // Sample slides data - in a real app this would come from props or API
+  const heroSlides = Array(10).fill(0); // 10 slides with the new Apple Watch slide
+
   return (
     <Container>
-
-
       <div className="banner mt-8 relative">
         <div className="container mx-auto">
           <div className="banner-item rounded-xl overflow-hidden relative arrow-center bg-orange-500">
@@ -72,34 +78,7 @@ export default function BannerOne() {
               <Slider {...settings}>
 
                 {/* اسلاید 1: آیفون 17 پرو مکس */}
-                <div className="h-full flex items-center px-4 lg:px-8">
-                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl p-4 text-center lg:text-left">
-                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                        آیفون 17 پرو مکس
-                      </h2>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mt-2">
-                        آینده در دستان شماست
-                      </h3>
-                      <p className="mt-3 text-white/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0">
-                        پردازنده A19، دوربین 48 مگاپیکسل با زوم 10x، نمایشگر 120 هرتز
-                      </p>
-                      <Link href="/shop/iphone-17-pro-max">
-                        <a className="mt-6 inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition-all">
-                          همین حالا بخرید
-                          <FaShoppingCart className="w-5 h-5" />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
-                      <img
-                        src="/assets/images/banner/iphone1.png"
-                        alt="آیفون 17 پرو مکس"
-                        className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                      />
-                    </div>
-                  </div>
-                </div>
+      
 
                 {/* اسلاید 2: ایرپاد پرو 3 */}
                 <div className="h-full flex items-center px-4 lg:px-8">
@@ -310,7 +289,34 @@ export default function BannerOne() {
                     </div>
                   </div>
                 </div>
-
+          <div className="h-full flex items-center px-4 lg:px-8">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
+                    <div className="max-w-xl p-4 text-center lg:text-left">
+                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        آیفون 17 پرو مکس
+                      </h2>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mt-2">
+                        آینده در دستان شماست
+                      </h3>
+                      <p className="mt-3 text-white/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0">
+                        پردازنده A19، دوربین 48 مگاپیکسل با زوم 10x، نمایشگر 120 هرتز
+                      </p>
+                      <Link href="/shop/iphone-17-pro-max">
+                        <a className="mt-6 inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition-all">
+                          همین حالا بخرید
+                          <FaShoppingCart className="w-5 h-5" />
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
+                      <img
+                        src="/assets/images/banner/iphone1.png"
+                        alt="آیفون 17 پرو مکس"
+                        className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                </div>
                 {/* اسلاید 9: اسپیکر JBL */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
@@ -341,8 +347,58 @@ export default function BannerOne() {
                   </div>
                 </div>
 
+                {/* اسلاید 10: اپل واچ */}
+                <div className="h-full flex items-center px-4 lg:px-8">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
+                    <div className="max-w-xl text-center lg:text-left p-4">
+                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        اپل واچ
+                      </h2>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mt-2">
+                        سلامت و ورزش در مچ دست شما
+                      </h3>
+                      <p className="mt-3 text-white/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0">
+                        صفحه نمایش Always-On Retina، سنسورهای سلامت پیشرفته، مقاومت در برابر آب
+                      </p>
+                      <Link href="/shop/apple-watch">
+                        <a className="mt-6 inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition-all">
+                          خرید اپل واچ
+                          <FaShoppingCart className="w-5 h-5" />
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
+                      <img
+                        src="/assets/images/banner/applewatch.png"
+                        alt="اپل واچ"
+                        className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                </div>
+
               </Slider>
             </div>
+          </div>
+          
+          {/* Custom Dot Indicators - Unified for both mobile and desktop */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentSlide(index);
+                  // Move to the clicked slide
+                  const slider = document.querySelector('.slick-slider');
+                  if (slider) {
+                    (slider as any).slickGoTo(index);
+                  }
+                }}
+                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ease-in-out ${
+                  index === currentSlide ? "bg-white w-8 md:w-8" : "bg-white/50"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

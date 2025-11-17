@@ -15,12 +15,12 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     <Provider store={store}>
       <ThemeProvider enableSystem={true} attribute="class">
         <Head>
-          <title>Pazhira</title>
+          <title>Pazhira | فروشگاه موبایل پاژیرا</title>
         </Head>
         <div dir="rtl" className="flex flex-col min-h-[100vh]">
           <NextNProgress height={7} />
           <Header />
-          <main className="flex-grow  md:mt-40">{children}</main>
+          <main className="flex-grow md:mt-52 ">{children}</main>
           <Footer />
         </div>
         <ToastContainer
