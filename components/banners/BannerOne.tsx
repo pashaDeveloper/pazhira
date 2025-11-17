@@ -289,34 +289,7 @@ export default function BannerOne() {
                     </div>
                   </div>
                 </div>
-          <div className="h-full flex items-center px-4 lg:px-8">
-                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-                    <div className="max-w-xl p-4 text-center lg:text-left">
-                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                        آیفون 17 پرو مکس
-                      </h2>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mt-2">
-                        آینده در دستان شماست
-                      </h3>
-                      <p className="mt-3 text-white/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0">
-                        پردازنده A19، دوربین 48 مگاپیکسل با زوم 10x، نمایشگر 120 هرتز
-                      </p>
-                      <Link href="/shop/iphone-17-pro-max">
-                        <a className="mt-6 inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition-all">
-                          همین حالا بخرید
-                          <FaShoppingCart className="w-5 h-5" />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
-                      <img
-                        src="/assets/images/banner/iphone1.png"
-                        alt="آیفون 17 پرو مکس"
-                        className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                      />
-                    </div>
-                  </div>
-                </div>
+
                 {/* اسلاید 9: اسپیکر JBL */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
@@ -346,7 +319,34 @@ export default function BannerOne() {
                     </div>
                   </div>
                 </div>
-
+          <div className="h-full flex items-center px-4 lg:px-8">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
+                    <div className="max-w-xl p-4 text-center lg:text-left">
+                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        آیفون 17 پرو مکس
+                      </h2>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mt-2">
+                        آینده در دستان شماست
+                      </h3>
+                      <p className="mt-3 text-white/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0">
+                        پردازنده A19، دوربین 48 مگاپیکسل با زوم 10x، نمایشگر 120 هرتز
+                      </p>
+                      <Link href="/shop/iphone-17-pro-max">
+                        <a className="mt-6 inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition-all">
+                          همین حالا بخرید
+                          <FaShoppingCart className="w-5 h-5" />
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
+                      <img
+                        src="/assets/images/banner/iphone1.png"
+                        alt="آیفون 17 پرو مکس"
+                        className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                </div>
                 {/* اسلاید 10: اپل واچ */}
                 <div className="h-full flex items-center px-4 lg:px-8">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
