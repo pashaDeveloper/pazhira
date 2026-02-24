@@ -34,7 +34,7 @@ const SignUp: NextPage = () => {
       jsCookie.set("userInfo", JSON.stringify(data));
       router.push("/");
     } catch (err: any) {
-      /* sanity.io is boycott for the people from Iran so I set cookies for whom don't use VPN in Iran*/
+      /* fallback for failed signup request */
       if (err.response.data.status == 500) {
         dispatch(userInfoActions.userLogin(user));
         jsCookie.set("userInfo", JSON.stringify(user));

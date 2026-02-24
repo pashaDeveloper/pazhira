@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
-import { client } from "../../../lib/client";
 import { signToken } from "../../../utilities/auth";
 import bcrypt from "bcryptjs";
+import { createUser, findUserByPhoneNumber } from "../../../lib/server/users-db";
 
 const handler = nc();
 
@@ -23,21 +23,17 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   // For demo purposes, accept any 4-digit code
   if (verificationCode.length === 4 && /^\d+$/.test(verificationCode)) {
     // Check if user exists, if not create one
-    let user = await client.fetch(`*[_type == "user" && phoneNumber == $phoneNumber][0]`, {
-      phoneNumber: phoneNumber,
-    });
+    let user = await findUserByPhoneNumber(phoneNumber);
     
     // If user doesn't exist, create a new one
     if (!user) {
-      // In a real app, you would create the user in your database
-      // For now, we'll just create a mock user object
-      user = {
-        _id: "mock-user-id-" + Date.now(),
+      user = await createUser({
         name: "User",
-        email: `${phoneNumber}@example.com`,
+        email: `${phoneNumber}-${Date.now()}@example.com`,
+        password: bcrypt.hashSync(`${phoneNumber}-${Date.now()}`),
         phoneNumber: phoneNumber,
         isAdmin: false,
-      };
+      });
     }
     
     // Generate token

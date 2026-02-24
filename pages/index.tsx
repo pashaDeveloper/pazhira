@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { specialOfferProductsActions } from "../store/specialOfferProducts-slice";
 import { newestProductsActions } from "../store/newestProduct-slice";
 
-import { client } from "../lib/client";
+import { getAllProducts } from "../lib/products";
 
 import Benefits from "../components/Benefits";
 import Carousel from "../components/carousel";
@@ -76,8 +76,7 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const productQuery = `*[_type=='product']`;
-  const products = await client.fetch(productQuery);
+  const products = getAllProducts();
 
   return {
     props: {

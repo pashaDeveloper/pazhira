@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
-import { client } from "../lib/client";
 import { IProduct } from "../lib/types/products";
 import ProductList from "../components/productList/ProductList";
+import { getOfferProducts } from "../lib/products";
 
 const offers: NextPage<{
   products: IProduct[];
@@ -17,8 +17,7 @@ const offers: NextPage<{
 export default offers;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const productQuery = `*[_type=='product'&& isOffer==true]`;
-  const products = await client.fetch(productQuery);
+  const products = getOfferProducts();
   return {
     props: {
       products: products,

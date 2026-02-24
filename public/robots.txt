@@ -1,10 +1,13 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://pazhira.com/sitemap.xml
-
+# *
 User-agent: *
-Disallow: /api/
-Disallow: /_next/
-Disallow: /404
-Disallow: /500
+Disallow: /api/*
+
+# Host
+Host: https://pazhira.com
+
+# Sitemaps
+Sitemap: https://pazhira.com/sitemap.xml

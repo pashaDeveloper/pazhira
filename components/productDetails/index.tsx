@@ -18,7 +18,7 @@ const ProductDetails: React.FC<Props> = ({ product, products }) => {
     .slice(0, 10);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-x-hidden">
       <Breadcrumb />
       <div className="w-full xl:max-w-[2100px] mx-auto">
         <div className="flex flex-col md:flex-row flex-wrap md:flex-nowrap items-center md:items-start mt-8 relative">

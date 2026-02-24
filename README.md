@@ -44,7 +44,7 @@ You can visit and explore in the Pazhira template at [Pazhira.vercel.app](https:
 
 ## 🔥Features
 * Using Redux toolkit as state manager
-* Using [Sanity.io](https://www.sanity.io/) as database
+* Using local JSON data as database seed
 * Fully responsive
 * Multi-language (EN-FA)
 * Multi-theme (Dark/Light)
@@ -60,33 +60,19 @@ You can visit and explore in the Pazhira template at [Pazhira.vercel.app](https:
 <p align="right">(<a href="#top">BACK TO TOP 🔝</a>)</p>
 
 ## 🚀Getting Started
-1. Sign up in [sanity.io](https://www.sanity.io/) and get `projectId` and `token`
-
-> **Warning**&nbsp;
-> To work with sanity, people who live in Iran should use a `VPN`.
-
-2. Clone the project
+1. Clone the project
   ```bash
   git clone https://github.com/ZahraMirzaei/online-shop.git
   ```
-3. Install project dependencies
+2. Install project dependencies
   ```bash
   npm install
   #or
   yarn add
   ```
-4. Enter your `projectId` into `lib/client.ts`
-5. Add `.env` file to root project, and enter your `token` into `.env`
-  ```js
-  NEXT_PUBLIC_SANITY_TOKEN= [ENTER YOUR TOKEN]
-  ```
-6. Go to sanity_onlineshop folder and open new terminal in this path, then
-  ```bash
-  sanity start
-  ```
-open `http://localhost:3333` and enter products.
- 
-7. Run the development server in project root path:
+3. Data is stored locally in `lib/data/products.json` and `lib/data/users.json`.
+
+4. Run the development server in project root path:
 
   ```bash
   npm run dev

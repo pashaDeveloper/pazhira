@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { client } from "../../../../lib/client";
 import { IProduct } from "../../../../lib/types/products";
 import ProductList from "../../../../components/productList/ProductList";
 import { ITitlePathsParams } from "../../../../lib/types/pagePathsParams";
+import { getAllProducts, getProductsByTitle } from "../../../../lib/products";
 
 const brandPage: NextPage<{
   products: IProduct[];
@@ -18,12 +18,11 @@ const brandPage: NextPage<{
 export default brandPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const query = `*[_type=="product"]{
-    "category":category[0],
-    "subCategory":category[1],
-    "title":category[2],
-  }`;
-  const products = await client.fetch(query);
+  const products = getAllProducts().map((product) => ({
+    category: product.category?.[0] || "",
+    subCategory: product.category?.[1] || "",
+    title: product.category?.[2] || "",
+  }));
   const paths = products.map((product: ITitlePathsParams) => ({
     params: {
       category: product.category,
@@ -38,11 +37,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const title = context.params?.title;
-  const subCategory = context.params?.subCategory;
-  const productQuery = `*[_type=='product'&& category[1]=="${subCategory}" && category[2]=="${title}"]`;
-
-  const products = await client.fetch(productQuery);
+  const title = String(context.params?.title || "");
+  const subCategory = String(context.params?.subCategory || "");
+  const products = getProductsByTitle(subCategory, title);
 
   return {
     props: {
