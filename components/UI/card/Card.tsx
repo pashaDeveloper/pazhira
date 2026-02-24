@@ -52,7 +52,11 @@ const Card: React.FC<Props> = ({ product }) => {
                 {product.name}
               </h3>
             </div>
-            <ProductPrice price={product.price} discount={product.discount} />
+            <ProductPrice
+              price={product.price}
+              discount={product.discount}
+              usePriceBox
+            />
           </div>
         </a>
       </Link>

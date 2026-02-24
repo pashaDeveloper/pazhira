@@ -46,9 +46,9 @@ const CardActions: React.FC<Props> = ({ product }) => {
   }
 
   return (
-    <div className="w-1/2 md:w-auto md:h-[130px] mt-2 p-2 flex md:flex-col justify-around self-center absolute bottom-2 md:-top-2 md:bottom-auto left-0  md:-left-1 rounded-lg md:rounded-full shadow-lg backdrop-filter backdrop-blur-[8px] bg-palette-card/20  ">
+    <div className="w-auto md:w-auto md:h-[130px] mt-2 px-2 py-1 md:p-2 flex md:flex-col items-center gap-2 md:gap-0 justify-around self-center absolute bottom-2 md:bottom-auto md:top-2 left-2 md:left-2 rounded-md md:rounded-full shadow-lg backdrop-filter backdrop-blur-[8px] bg-palette-card/35">
       <div
-        className="hover:text-rose-600 transition-colors sm:px-3 md:px-0"
+        className="hover:text-rose-600 transition-colors px-1 md:px-0"
         onClick={toggleFavoriteHandler}
       >
         <FavoriteIcon
@@ -58,11 +58,11 @@ const CardActions: React.FC<Props> = ({ product }) => {
           }}
         />
       </div>
-      <div className="hover:text-rose-600 transition-colors sm:px-3 md:px-0">
+      <div className="hover:text-rose-600 transition-colors px-1 md:px-0">
         <RiShareLine style={{ fontSize: "1.2rem" }} />
       </div>
       <div
-        className="hover:text-rose-600 active:scale-125 transition-all sm:px-3 md:px-0"
+        className="hover:text-rose-600 active:scale-125 transition-all px-1 md:px-0"
         onClick={addToCartHandler}
       >
         <RiShoppingCart2Line
